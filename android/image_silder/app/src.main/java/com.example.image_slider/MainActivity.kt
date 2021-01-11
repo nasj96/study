@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         //viewpager = findViewById(R.id.viewpager) as ViewPager
 
         //-- 4.1 --
-        viewpager = binding.viewpager as ViewPager
+        viewpager = binding.viewpager
 
         val adapter = ViewPagerAdapter(this)
         viewpager.adapter = adapter
