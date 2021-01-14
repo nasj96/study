@@ -169,7 +169,6 @@ do {
 
 
 #### 함수
-> 기본
 ```
 fun sum(): Int {
     return 1 + 2
@@ -180,12 +179,12 @@ fun sum(a:Int, b:Int): Int {
 }
 ```
 
-> return 바로 나오는 경우 return 생략가능
+#### 함수 :: return 바로 나오는 경우 return 생략가능
 ```
 fun sum1(a:Int, b:Int):Int = a+b
 ```
 
-> 리턴할 값이 없는 경우 Unit(Object), Unit 은 생략가능
+#### 함수 :: 리턴할 값이 없는 경우 Unit(Object), Unit 은 생략가능
 ```
 fun sum3(a:Int, b:Int):Unit {
     Log.d("function", "sum3(${a}, ${b})")
@@ -323,3 +322,29 @@ var result3 = age?.plus(1) ?: 2
 
 Log.d("Nullable", "${result2}, ${result3}") // Nullable: null, 2
 ```
+
+
+
+### GETTER / SETTER
+```
+// Get & Set
+class Sample1(var name: String)
+
+// Get
+class Sample2(val a: Int, val b: Int) {
+    val name: String = "" // val 은 읽기 프로퍼티로 private field와 public getter 함수를 생성
+    var age: Int = 10 // var 은 읽기 & 쓰기 프로퍼티로 private field와 public getter, public setter 함수를 생성
+
+    val isEqual: Boolean
+        get() {
+            return a == b
+        }
+}
+
+var sample1 = Sample1("홍길동")
+var sample2 = Sample2(250, 250)
+
+Log.d("SAMPLE", "name = ${sample1.name}") // name = 홍길동
+Log.d("SAMPLE", "equal = ${sample2.isEqual}") // equal = true
+```
+
