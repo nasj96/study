@@ -303,3 +303,23 @@ var name2:String = sample.getName("의적")
 
 Log.d("overload", "name1:${name1}, name2:${name2}")
 ```
+
+
+
+### Nullable
+```
+var name:String = "홍길동"
+var age:Int? = null // nullable, 메모리할당
+var activity:Activity? = null // nullable, 메모리할당
+
+// error, null exception
+var result1 = age.plus(0)
+
+// Safe call :: 변수명 뒤에 ? 붙여줌.
+var result2 = age?.plus(1)
+
+// Elvis exression :: null 인경우 초기화값 설정
+var result3 = age?.plus(1) ?: 2
+
+Log.d("Nullable", "${result2}, ${result3}") // Nullable: null, 2
+```
