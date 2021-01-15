@@ -328,6 +328,17 @@ Sample("홍길동")
 Sample("홍길동", 20)
 ```
 
+```
+class Sample2(val name: String, val age: Int = 0, val birthday: String = "2000-01-01") {
+    constructor(name: String, age: Int): this(name, age, "2000-01-01")
+    constructor(name: String): this(name,0)
+
+    init {
+        println("Sample name $name age $age birthday $birthday")
+    }
+}
+```
+
 
 ### Nullable
 ```
