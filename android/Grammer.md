@@ -3,7 +3,7 @@
 
 
 #### 변수 <변경가능>
-```
+```kotlin
 var intVal: Int = 10 
 var doubleVal: Double = 12.3
 var floatVal: Float = 12.3f
@@ -17,7 +17,7 @@ var boolVal: Boolean = true
 
 
 #### 상수 <변경불가능> :: 주로 대문자로 선언됨
-```
+```kotlin
 val INTVAL: Int = 10
 ```
 
@@ -29,13 +29,13 @@ val INTVAL: Int = 10
 
 
 #### 비교연산자 :: <, <=, >, >=, !=, ==, !==, ===
-```
+```kotlin
 val result:Boolean = 10 > 20  // false
 ```
 
 
 #### 논리연산자 :: &&, ||, !
-```
+```kotlin
 var a:Boolean = true
 var b:Boolean = true
 val result:Boolean = (a && b) // true
@@ -43,7 +43,7 @@ val result:Boolean = (a && b) // true
 
 
 #### 조건문 :: if
-```
+```kotlin
 val a: Int = 10
 val b: Int = 10
 
@@ -57,7 +57,7 @@ if(a == b) {
 
 
 ### when (다른언어의 switch)
-```
+```kotlin
 val dateVal = 2029
 when(dateVal) {
     2021 -> Log.d("WHEN", "2021 입니다")
@@ -78,7 +78,7 @@ WHEN: 알수없는 값이 들어왔다
 
 
 #### 배열
-```
+```kotlin
 var intArr:IntArray = intArrayOf(1,2,3,4,5,6,7,8,9,10)
 
 var intArr:IntArray = IntArray(10)
@@ -86,7 +86,6 @@ intArr[0] = 1
 intArr[1] = 2
 ...
 intArr[9] = 10
-
 
 var charArr:CharArray = CharArray(7)
 charArr[0] = '월'
@@ -97,7 +96,7 @@ charArr[6] = '일'
 
 #### 컬렉션 :: mutableListOf, mutableMapOf
 > Generic Type :: 변수에서 사용할 타입을 <자료타입> 로 지정한다 
-```
+```kotlin
 var mutableListArr = mutableListOf<Int>()
 mutableListArr.add(1) // index 0
 mutableListArr.add(2) // index 1
@@ -111,7 +110,7 @@ Log.d("Collection", "index 2번의 값은 ${mutableListArr.get(2)}")
 Collection: index 2번의 값은 3
 ```
 
-```
+```kotlin
 var mutableMapArr = mutableMapOf<String, String>()
 mutableMapArr.put("키1", "값1")
 mutableMapArr.put("키2", "값2")
@@ -127,7 +126,7 @@ index 2번의 값은 값1
 
 
 #### 반복문 :: for
-```
+```kotlin
 for(idx in 1..10) {
     Log.d("FOR", "idx ${idx}")
 }
@@ -152,7 +151,7 @@ for(idx in intArr) {
 
 
 #### 반복문 :: while, do while
-```
+```kotlin
 var count:Int = 0
 while(count<3) {
     Log.d("WHILE", "COUNT = ${count}")
@@ -169,7 +168,7 @@ do {
 
 
 #### 함수
-```
+```kotlin
 fun sum(): Int {
     return 1 + 2
 }
@@ -180,12 +179,12 @@ fun sum(a:Int, b:Int): Int {
 ```
 
 #### 함수 :: return 바로 나오는 경우 return 생략가능
-```
+```kotlin
 fun sum1(a:Int, b:Int):Int = a+b
 ```
 
 #### 함수 :: 리턴할 값이 없는 경우 Unit(Object), Unit 은 생략가능
-```
+```kotlin
 fun sum3(a:Int, b:Int):Unit {
     Log.d("function", "sum3(${a}, ${b})")
 }
@@ -198,7 +197,7 @@ fun sum4(a:Int, b:Int) {
 
 
 #### 클래스 :: 초기화후 사용
-```
+```kotlin
 class Sample {
     var count = 0
     fun sum(a:Int, b:Int) {
@@ -213,7 +212,7 @@ cls.sum(1,2)
 
 
 #### 클래스 :: 초기화 없이 바로 사용(companion object)
-```
+```kotlin
 class Sample2 {
     companion object {
         var count = 0
@@ -228,12 +227,10 @@ Sample2.sum(3, 4)
 ```
 
 
-
-
 #### 클래스 상속
 > 상속을 위해 Parent class 에게 open 를 넣어준다  
 > Child는 Parent 의 변수와 메소드를 사용할수 있다
-```
+```kotlin
 open class Parent {
     var count = 0
     fun echo() {
@@ -258,7 +255,7 @@ child.print()
 
 ### 클래스 :: override
 > override 는 Parent 에 open 이 있는 변수와 메소드를 Child에서 재정의 할 수 있음을 말한다
-```
+```kotlin
 open class Parent {
     open var count = 0
 
@@ -286,7 +283,7 @@ child.echo()
 
 ### 클래스 :: overload
 > overload 는 파라메터가 다른 동일한 함수명을 의미
-```
+```kotlin
 class Sample {
     fun getName():String {
         return "홍길동"
@@ -304,7 +301,7 @@ Log.d("overload", "name1:${name1}, name2:${name2}")
 ```
 
 ### 클래스 :: init / constructor >> 객체 생성시 호출
-```
+```kotlin
 class Sample {
     init {
         println("Sample init")
@@ -328,7 +325,7 @@ Sample("홍길동")
 Sample("홍길동", 20)
 ```
 
-```
+```kotlin
 class Sample2(val name: String, val age: Int = 0, val birthday: String = "2000-01-01") {
     constructor(name: String, age: Int): this(name, age, "2000-01-01")
     constructor(name: String): this(name,0)
@@ -341,7 +338,7 @@ class Sample2(val name: String, val age: Int = 0, val birthday: String = "2000-0
 
 
 ### Nullable
-```
+```kotlin
 var name:String = "홍길동"
 var age:Int? = null // nullable, 메모리할당
 var activity:Activity? = null // nullable, 메모리할당
@@ -361,7 +358,7 @@ Log.d("Nullable", "${result2}, ${result3}") // Nullable: null, 2
 
 
 ### GETTER / SETTER
-```
+```kotlin
 // Get & Set
 class Sample1(var name: String)
 
