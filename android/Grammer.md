@@ -303,6 +303,30 @@ var name2:String = sample.getName("의적")
 Log.d("overload", "name1:${name1}, name2:${name2}")
 ```
 
+### 클래스 :: init / constructor >> 객체 생성시 호출
+```
+class Sample {
+    init {
+        println("Sample init")
+    }
+
+    constructor() {
+        println("Sample X")
+    }
+
+    constructor(name: String) {
+        println("Sample name $name")
+    }
+
+    constructor(name: String, age: Int): this(name) {
+        println("Sample name $name, age $age")
+    }
+}
+
+Sample()
+Sample("홍길동")
+Sample("홍길동", 20)
+```
 
 
 ### Nullable
