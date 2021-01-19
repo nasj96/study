@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Exo Player</string>
+    <string name="url_mp3">https://storage.googleapis.com/exoplayer-test-media-0/play.mp3</string>
+    <string name="url_mp4">https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4</string>
+    <string name="url_m3u8_01">https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8</string>
+    <string name="url_m3u8_02">https://multiplatform-f.akamaihd.net/i/multi/april11/sintel/sintel-hd_,512x288_450_b,640x360_700_b,768x432_1000_b,1024x576_1400_m,.mp4.csmil/master.m3u8</string>
+    <string name="url_m3u8_03">https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8</string>
+</resources>
