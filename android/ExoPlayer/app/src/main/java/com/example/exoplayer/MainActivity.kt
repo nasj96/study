@@ -1,8 +1,10 @@
 package com.example.exoplayer
 
 import android.content.pm.ActivityInfo
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -13,7 +15,6 @@ import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.util.Util
 
-
 class MainActivity : AppCompatActivity() {
     companion object {
         val TAG: String = "ExoPlayer"
@@ -23,10 +24,11 @@ class MainActivity : AppCompatActivity() {
     var fullscreenButton: ImageView? = null
     var playerView: PlayerView? = null
     var player: SimpleExoPlayer? = null
-    var playWhenReady: Boolean = true
+    var playWhenReady: Boolean = false // 자동시작여부
     var currentWindow: Int = 0
     var playbackPosition: Long = 0L
     var fullscreen = false
+    var poster: ImageView? = null
     private var playbackStateListener: PlaybackStateListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,10 +37,21 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
+
+        //플레이어
         playerView = binding!!.exoPlayerView
+        playbackStateListener = PlaybackStateListener()
+
+        //풀스크린
         fullscreenButton = playerView!!.findViewById(R.id.exo_fullscreen_icon)
 
-        playbackStateListener = PlaybackStateListener()
+        //포스터
+        poster = binding!!.poster
+        var uri = "http://laza.jalbum.net/Testing%20Base%20as%20site/Media/slides/big_buck_bunny.jpg"
+
+        //poster!!.setImageURI(uri)
+        //poster!!.visibility = View.VISIBLE
+        //playerView!!.visibility = View.INVISIBLE
     }
 
     private class PlaybackStateListener : Player.EventListener {
@@ -99,14 +112,13 @@ class MainActivity : AppCompatActivity() {
     private fun initializePlayer() {
         Log.d(TAG, "initializePlayer: ")
 
-
         //플레이어 생성
         if (player == null) {
             player = SimpleExoPlayer.Builder(this).build()
         }
 
         //뷰에 플레이어 연결
-        playerView?.setPlayer(player)
+        playerView!!.setPlayer(player)
 
         //플레이어에 영상 연결
         val mediaItem: MediaItem = MediaItem.fromUri(getString(R.string.url_m3u8_01))
@@ -221,7 +233,7 @@ class MainActivity : AppCompatActivity() {
 //                    val params = playerView!!.layoutParams
 //                    params.width = ViewGroup.LayoutParams.MATCH_PARENT
 //                    params.height =
-//                        (200 * applicationContext.resources.displayMetrics.density).toInt()
+//                        (200 * applicationContlext.resources.displayMetrics.density).toInt()
 //                    playerView!!.layoutParams = params
 
                     fullscreen = false

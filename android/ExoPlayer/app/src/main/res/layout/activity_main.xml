@@ -10,15 +10,25 @@
         android:id="@+id/exoPlayerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible"
+        app:controller_layout_id="@layout/exo_playback_control_view"
+        app:fastforward_increment="5000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:show_timeout="3000"
-        app:fastforward_increment="5000"
+        app:resize_mode="fit"
         app:rewind_increment="5000"
-        app:controller_layout_id="@layout/exo_playback_control_view"
-        app:resize_mode="fit"/>
+        app:show_timeout="3000">
+
+    </com.google.android.exoplayer2.ui.PlayerView>
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <!--app:use_controller="false"-->
     <!--app:resize_mode="fixed_width"-->
