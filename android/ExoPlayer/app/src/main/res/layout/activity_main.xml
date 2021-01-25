@@ -31,6 +31,16 @@
         android:visibility="visible"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <ImageView
+        android:id="@+id/btnVodPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ico_play_btn" />
+
     <!--app:use_controller="false"-->
     <!--app:resize_mode="fixed_width"-->
     <!--app:resize_mode="fixed_height"-->

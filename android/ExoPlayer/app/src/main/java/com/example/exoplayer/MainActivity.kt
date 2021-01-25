@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     var currentWindow: Int = 0
     var playbackPosition: Long = 0L
     var fullscreen = false
+    var btnPlay:ImageView? = null
     var poster: ImageView? = null
     private var playbackStateListener: PlaybackStateListener? = null
 
@@ -50,11 +51,17 @@ class MainActivity : AppCompatActivity() {
         //포스터
         poster = binding!!.poster
         var uri = Uri.parse("http://laza.jalbum.net/Testing%20Base%20as%20site/Media/slides/big_buck_bunny.jpg" )
-
         Glide.with(this).load(uri).into(poster!!);
 
-        //poster!!.visibility = View.VISIBLE
-        //playerView!!.visibility = View.INVISIBLE
+        //플레이버튼
+        btnPlay = binding!!.btnVodPlay
+        btnPlay!!.setOnClickListener {
+            btnPlay!!.visibility = View.INVISIBLE
+            poster!!.visibility = View.INVISIBLE
+            playerView!!.visibility = View.VISIBLE
+            playerView!!.useController = true
+            player!!.playWhenReady = !playWhenReady
+        }
     }
 
     private class PlaybackStateListener : Player.EventListener {
@@ -110,6 +117,8 @@ class MainActivity : AppCompatActivity() {
             super.onPlaybackParametersChanged(playbackParameters)
             Log.d(TAG, "onPlaybackParametersChanged: $playbackParameters")
         }
+
+
     }
 
     private fun initializePlayer() {
