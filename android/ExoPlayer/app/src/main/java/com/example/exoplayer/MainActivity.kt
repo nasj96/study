@@ -8,16 +8,18 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.example.exoplayer.databinding.ActivityMainBinding
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.ExoPlaybackException
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.util.Util
+import java.net.URL
 
 class MainActivity : AppCompatActivity() {
     companion object {
-        val TAG: String = "ExoPlayer"
+        val TAG: String = MainActivity::class.java.simpleName
     }
 
     var binding: ActivityMainBinding? = null
@@ -47,9 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         //포스터
         poster = binding!!.poster
-        var uri = "http://laza.jalbum.net/Testing%20Base%20as%20site/Media/slides/big_buck_bunny.jpg"
+        var uri = Uri.parse("http://laza.jalbum.net/Testing%20Base%20as%20site/Media/slides/big_buck_bunny.jpg" )
 
-        //poster!!.setImageURI(uri)
+        Glide.with(this).load(uri).into(poster!!);
+
         //poster!!.visibility = View.VISIBLE
         //playerView!!.visibility = View.INVISIBLE
     }
