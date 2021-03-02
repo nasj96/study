@@ -17,10 +17,10 @@ $> apt-get install -y libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlit
 
 ```shell
 $> cd /usr/local/src
-$> wget https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
-$> tar xzf Python-3.8.7.tgz
+$> wget https://www.python.org/ftp/python/3.8.7/Python-3.9.2.tgz
+$> tar xzf Python-3.9.2.tgz
 
-$> cd Python-3.8.7
+$> cd Python-3.9.2
 $> ./configure --enable-optimizations
 $> make altinstall
 ```
@@ -28,12 +28,12 @@ $> make altinstall
 
 #### 3. 버전확인
 ```shell
-$> python3.8 -V
+$> python3.9 -V
 $> python3 -V
 ```
 
 
 #### 4. 별칭설정
 ```shell
-$> alias py38=python3.8
+$> alias py39=python3.9
 ```
