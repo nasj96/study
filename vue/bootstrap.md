@@ -36,12 +36,16 @@ $> cd argon
 $> npm run serve
 ```
 
-### component 설치
+### vue router 설치
 
 ```
 $> npm install vue-router --save
+```
+
+### boostrap 설치
+
+```
 $> npm install vue bootstrap bootstrap-vue
-$> npm install argon-design-system-free
 ```
 
 ### /root/src/main.js 수정
