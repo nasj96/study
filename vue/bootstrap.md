@@ -31,8 +31,8 @@ $> npm install -g @vue/cli
 -   vue cli 이용
 
 ```
-$> vue create argon
-$> cd argon
+$> vue create exam_bootstrap
+$> cd exam_bootstrap
 $> npm run serve
 ```
 
@@ -46,6 +46,14 @@ $> npm install vue-router --save
 
 ```
 $> npm install vue bootstrap bootstrap-vue
+```
+
+### vue-material 설치
+
+-   https://vuematerial.io/getting-started
+
+```
+$> npm install vue-material --save
 ```
 
 ### /root/src/main.js 수정
