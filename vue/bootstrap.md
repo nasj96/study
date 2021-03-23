@@ -87,6 +87,10 @@ new Vue({
 <script>
 export default {
     name: "App",
+    mounted() {
+        // 환경 변수 출력
+        console.log(process.env)
+    },
     components: {
     },
 };
@@ -138,4 +142,26 @@ export default {
     },
 };
 </script>
+```
+
+### .env.development 파일 생성
+
+```vue.js
+VUE_APP_ENVTEST=devlopment
+VUE_APP_PORT=4000
+BASE_URL="/"
+```
+
+### .env.production 파일 생성
+
+```vue.js
+VUE_APP_ENVTEST=production
+VUE_APP_PORT=4000
+BASE_URL="/"
+```
+
+### vue.config.js 파일생성
+
+```vue.js
+
 ```
