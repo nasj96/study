@@ -11,19 +11,19 @@ $> apt install -y npm
 $> npm install -g nodemon
 ```
 
-### vue 설치
-
-```
-$> npm install -g vue
-$> npm install -g @vue/cli
-```
-
 ### 프로젝트 폴더 생성
 
 ```
 $> cd /
 $> su mkdir workspace
 $> cd /workspace
+```
+
+### vue, vue/cli 설치
+
+```
+$> npm install -g vue
+$> npm install -g @vue/cli
 ```
 
 ### 프로젝트 설치
