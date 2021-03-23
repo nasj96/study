@@ -1,0 +1,141 @@
+### git 설치
+
+```
+$> apt-get -y install git
+```
+
+### node 설치
+
+```
+$> apt install -y npm
+$> npm install -g nodemon
+```
+
+### vue 설치
+
+```
+$> npm install -g vue
+$> npm install -g @vue/cli
+```
+
+### 프로젝트 폴더 생성
+
+```
+$> cd /
+$> su mkdir workspace
+$> cd /workspace
+```
+
+### 프로젝트 설치
+
+-   vue cli 이용
+
+```
+$> vue create argon
+$> cd argon
+$> npm run serve
+```
+
+### component 설치
+
+```
+$> npm install vue-router --save
+$> npm install vue bootstrap bootstrap-vue
+$> npm install argon-design-system-free
+```
+
+### /src/main.js 수정
+
+-   bootstrap 설정
+-   router 설정
+
+```vue.js
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue);
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin);
+
+Vue.config.productionTip = false;
+
+new Vue({
+    router,
+    render: (h) => h(App),
+}).$mount("#app");
+```
+
+### /src/App.vue 수정
+
+```vue.js
+<template>
+    <div id="app">
+        <div id="content" class="content">
+            <router-view></router-view>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "App",
+    components: {
+    },
+};
+</script>
+```
+
+### /src/router.js 생성
+
+```vue.js
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from './views/Home';
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    name : "history",
+    routes: [
+        {
+            path: "/",
+            component: Home,
+        }
+    ]
+});
+
+export default router;
+```
+
+### /src/views/Home.vue 생성
+
+```vue.js
+<template>
+    <div>
+        <b-table striped hover :items="items"></b-table>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            items: [
+                { age: 40, first_name: "Dickerson", last_name: "Macdonald" },
+                { age: 21, first_name: "Larsen", last_name: "Shaw" },
+                { age: 89, first_name: "Geneva", last_name: "Wilson" },
+                { age: 38, first_name: "Jami", last_name: "Carney" },
+            ],
+        };
+    },
+};
+</script>
+```
