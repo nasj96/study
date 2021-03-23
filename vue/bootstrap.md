@@ -163,5 +163,15 @@ BASE_URL="/"
 ### vue.config.js 파일생성
 
 ```vue.js
+const path = require("path");
 
+module.exports = {
+    // build 결과물 출력 폴더 지정
+    outputDir: path.resolve(__dirname, "./output"),
+
+    devServer: {
+        // 환경변수 포트 또는 기본 포트로 개발서버 실행
+        port: process.env.VUE_APP_PORT || 8080
+    }
+};
 ```
