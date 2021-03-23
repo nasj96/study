@@ -44,7 +44,7 @@ $> npm install vue bootstrap bootstrap-vue
 $> npm install argon-design-system-free
 ```
 
-### /src/main.js 수정
+### /root/src/main.js 수정
 
 -   bootstrap 설정
 -   router 설정
@@ -73,7 +73,7 @@ new Vue({
 }).$mount("#app");
 ```
 
-### /src/App.vue 수정
+### /root/src/App.vue 수정
 
 ```vue.js
 <template>
@@ -97,7 +97,7 @@ export default {
 </script>
 ```
 
-### /src/router.js 생성
+### /root/src/router.js 생성
 
 ```vue.js
 import Vue from 'vue';
@@ -119,7 +119,7 @@ const router = new VueRouter({
 export default router;
 ```
 
-### /src/views/Home.vue 생성
+### /root/src/views/Home.vue 생성
 
 ```vue.js
 <template>
@@ -144,7 +144,7 @@ export default {
 </script>
 ```
 
-### .env.development 파일 생성
+### /root/.env.development 파일 생성
 
 ```vue.js
 VUE_APP_ENVTEST=devlopment
@@ -152,7 +152,7 @@ VUE_APP_PORT=4000
 BASE_URL="/"
 ```
 
-### .env.production 파일 생성
+### /root/.env.production 파일 생성
 
 ```vue.js
 VUE_APP_ENVTEST=production
@@ -160,7 +160,7 @@ VUE_APP_PORT=4000
 BASE_URL="/"
 ```
 
-### vue.config.js 파일생성
+### /root/vue.config.js 파일생성
 
 ```vue.js
 const path = require("path");
